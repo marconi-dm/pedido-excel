@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/2ac557cb10.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Pedido-Excel</title>
+</head>
+<body>
+
+    <header>
+        <div class='logo-container'>
+            <div class='dot' ></div>
+            <p class='logo-title'>Pedido<strong>Excel</strong></p>
+        </div>
+        <div>
+            <a href="https://github.com/marconi-dm">
+                <i class="fa-brands fa-github iGithub" style="color: #5db996;">
+            </i></a>
+
+            <a href="https://www.linkedin.com/in/marconi-dm/">
+                <i class="fa-brands fa-linkedin-in iLinkedin" style="color: #5db996;"></i>
+            </a> 
+        </div>
+        
+    </header>
+
+    
+
+    <div class='container'>
+        <form method=post enctype=multipart/form-data>
+            <div>
+                <h1>Upload de Arquivo PDF</h1>
+                <input type=file name=file>
+                <input type=submit value="Upload">
+            </div>
+
+            {% if error %}
+                <div class="error-message" style="display: block;">
+                    {{ error }}
+                </div>
+            {% endif %}
+  
+        </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='script/index.js') }}"></script>
+</body>
+</html>
